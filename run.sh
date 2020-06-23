@@ -26,7 +26,7 @@ if [ "$(git diff ${INPUT_DICT})" != "" ]; then
   export MODIFIED=true
 fi
 
-if [ $MODIFIED == "true" ]; then
+if [ "$MODIFIED" = "true" ]; then
   echo "Commit files"
   git config --local user.email "action@github.com"
   git config --local user.name "GitHub Action"
