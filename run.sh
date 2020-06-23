@@ -13,8 +13,8 @@ INPUT_BRANCH=${INPUT_BRANCH:-master}
 echo "Basic info"
 echo "  Contents"
 ls -lh ${INPUT_CONTENTS}
-echo "  Dict"
-ls -lh ${INPUT_DICT}
+# echo "  Dict"
+# ls -lh ${INPUT_DICT}
 echo "  GitHub Actor: ${GITHUB_ACTOR}"
 echo "  Repo: ${GITHUB_REPOSITORY}"
 
