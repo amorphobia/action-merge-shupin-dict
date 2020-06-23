@@ -26,7 +26,7 @@ if [ "$(git diff ${INPUT_DICT})" != "" ]; then
   export MODIFIED=1
 fi
 
-[ "$MODIFIED" -eq 1 ] && {
+if ${MODIFIED}; then
   echo "Commit files"
   git config --local user.email "action@github.com"
   git config --local user.name "GitHub Action"
@@ -35,4 +35,4 @@ fi
 
   echo "Push changes"
   git push "https://${INPUT_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" HEAD:${INPUT_BRANCH}
-};
+fi
