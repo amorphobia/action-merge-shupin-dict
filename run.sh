@@ -23,10 +23,10 @@ cat ${INPUT_CONTENTS} > ${INPUT_DICT}
 
 echo "Test modified"
 if [ "$(git diff ${INPUT_DICT})" != "" ]; then
-  export MODIFIED=true
+  export MODIFIED=1
 fi
 
-[ "$MODIFIED" = "true" ] && {
+[ "$MODIFIED" -eq 1 ] && {
   echo "Commit files"
   git config --local user.email "action@github.com"
   git config --local user.name "GitHub Action"
